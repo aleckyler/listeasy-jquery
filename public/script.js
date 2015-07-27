@@ -28,25 +28,50 @@ var main = function() {
       $('.select_all').attr('value','Check all')
     }
   })
+  var i = 1
+  var j = ''
   $('.delete_checked').on("click", function() {
+    var x = j + i
     $('input:checkbox').each(function(){
-      if ($(this).parent('.list p').css('display') === 'none') {
-        $(this).parent('.list p').remove()
-      } else if ($(this).prop('checked')) {
+      // if ($(this).parent('.list p').css('display') === 'none') {
+      //   $(this).parent('.list p').remove()
+      // } else
+      if ($(this).prop('checked')) {
         $(this).parent('.list p').css('display', 'none')
+        $(this).parent('.list p').addClass(x)
+      }
+      for (var h = i-1; h > 0; h--) {
+        var f = '.' + h
+        $(f).each(function() {
+          $(this).removeClass(x)
+        })
       }
     })
     if ($('.undo_delete').css('display') === "none") {
       $('.undo_delete').removeClass('not_displayed')
     }
+    i++
   })
   $('.undo_delete').on("click",function() {
-    $('input:checkbox').each(function(){
-      if ($(this).parent('.list p').css('display') === 'none') {
-        $(this).parent('.list p').css('display', '')
-      }
+    console.log(i)
+    i--
+    console.log(i)
+    var y = '.' + i
+    x = j + i
+    console.log(y)
+    console.log(typeof(y))
+    $(y).each(function(){
+      $(this).css('display', '')
+      $(this).removeClass(x)
     })
-    $('.undo_delete').addClass('not_displayed')
+    // $('input:checkbox').each(function(){
+    //   if ($(this).parent('.list p').class('') === 'none') {
+    //     $(this).parent('.list p').css('display', '')
+    //   }
+    // })
+    if (i === 1) {
+      $('.undo_delete').addClass('not_displayed')
+    }
   })
   $('.list').on('click', '.complete', function() {
     if ($(this).text() === "Incomplete") {
@@ -58,16 +83,26 @@ var main = function() {
     }
   })
   $('.delete_completed').on("click", function() {
+    x = j + i
     $('.complete').each(function(){
-      if ($(this).parent('.list p').css('display') === 'none') {
-        $(this).parent('.list p').remove()
-      } else if ($(this).text() === "Complete") {
+      // if ($(this).parent('.list p').css('display') === 'none') {
+      //   $(this).parent('.list p').remove()
+      // } else
+      if ($(this).text() === "Complete") {
         $(this).parent('.list p').css('display', 'none')
+        $(this).parent('.list p').addClass(x)
+      }
+      for (var h = i-1; h > 0; h--) {
+        var f = '.' + h
+        $(f).each(function() {
+          $(this).removeClass(x)
+        })
       }
     })
     if ($('.undo_delete').css('display') === "none") {
       $('.undo_delete').removeClass('not_displayed')
     }
+    i++
   })
 };
 
