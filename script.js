@@ -58,10 +58,10 @@ var main = function() {
     }
   })
   $('.delete_completed').on("click", function() {
-    $('input:checkbox').each(function(){
+    $('.complete').each(function(){
       if ($(this).parent('.list p').css('display') === 'none') {
         $(this).parent('.list p').remove()
-      } else if ($(this).prop('checked')) {
+      } else if ($(this).text() === "Complete") {
         $(this).parent('.list p').css('display', 'none')
       }
     })
