@@ -10,45 +10,60 @@
       <h1>ListEasy</h1>
     </div>
     <div class="main">
+      <div class="options">
+        <p>
+          <!-- <input class="select_all" id="select_all_checkbox" type="checkbox" name="Select all"> -->
+          <input class="select_all" type="button" value="Check all">
+          <input class="delete_checked" type="button" value="Delete checked">
+          <input class="delete_completed" type="button" value="Delete completed">
+          <input class="undo_delete not_displayed" type="button" value="Undo delete">
+        </p>
+      </div>
       <div class="list">
         <p>
           <input type="checkbox">
           <i class="glyphicon glyphicon-star"></i>
           <span>Brie</span>
           <i class="glyphicon glyphicon-remove"></i>
+          <span class="complete incomplete">Incomplete</span>
         </p>
         <p>
           <input type="checkbox">
           <i class="glyphicon glyphicon-star"></i>
           <span>Bread</span>
           <i class="glyphicon glyphicon-remove"></i>
+          <span class="complete incomplete">Incomplete</span>
         </p>
         <p>
           <input type="checkbox">
           <i class="glyphicon glyphicon-star"></i>
           <span>Sparkling Cider</span>
           <i class="glyphicon glyphicon-remove"></i>
+          <span class="complete incomplete">Incomplete</span>
         </p>
         <p>
           <input type="checkbox" checked>
           <i class="glyphicon glyphicon-star"></i>
           <span>Strawberries</span>
           <i class="glyphicon glyphicon-remove"></i>
+          <span class="complete incomplete">Incomplete</span>
         </p>
         <p>
           <input type="checkbox">
           <i class="glyphicon glyphicon-star"></i>
           <span>Chocolate Mousse</span>
           <i class="glyphicon glyphicon-remove"></i>
+          <span class="complete incomplete">Incomplete</span>
         </p>
         <p>
           <input type="checkbox">
           <i class="glyphicon glyphicon-star active"></i>
           <span>Figs</span>
           <i class="glyphicon glyphicon-remove"></i>
+          <span class="complete incomplete">Incomplete</span>
         </p>
       </div>
-      
+
       <form class="form">
         <div class="form-container">
           <input id="todo" type="text" class="form-input" placeholder="Add item">
@@ -56,7 +71,7 @@
         <button type="submit" class="btn">+</button>
       </form>
     </div>
-    
+
     <script src="http://s3.amazonaws.com/codecademy-content/projects/jquery.min.js"></script>
     <script src='script.js'></script>
 </body>
